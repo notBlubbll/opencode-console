@@ -2,6 +2,8 @@
 
 A local mock server for the [OpenCode Console](https://console.opencode.ai) that serves the real frontend assets while emulating all backend API endpoints.
 
+<img width="1041" height="907" alt="image" src="https://github.com/user-attachments/assets/624c3bee-d290-4843-b7f0-ec4c57d0f681" />
+
 ## Quick Start
 
 ```bash
