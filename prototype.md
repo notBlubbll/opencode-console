@@ -163,7 +163,7 @@ ServiceAccountWithKeys structure:
 
 | Method | Path | Success Schema | Notes |
 |--------|------|---------------|-------|
-| `GET` | `/api/config` | `OpenCodeConfigResponse` | Enterprise config / provider list |
+| `GET` | `/api/config` | `OpenCodeConfigResponse` | Enterprise config. Response must include `_tag:"OpenCodeConfigResponse"`. Fields: `config.enterprise` (nullable object with `url`), `config.enabled_providers` (nullable string[]), `config.provider` (nullable Record<string, OpenCodeProvider>). |
 
 ## Setup
 

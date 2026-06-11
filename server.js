@@ -67,7 +67,7 @@ app.post('/auth/device/deny', (req, res) => res.json({ ok: true }));
 app.get('/api/sso/hrd', (req, res) => { console.log('HRD', req.query.email); res.json(null); });
 app.get('/api/sso/discover', (req, res) => res.json(null));
 app.get('/api/setup/status', (req, res) => res.json({ emailPassword:true, oidc:false, oidcProvider:'', oidcLabel:'', oidcCallbackPath:'', socialProviders:[], signup:'locked', inviteCount:0, domainCount:0, signupAllowedDomainsConfigured:false, signupAllowedDomainCount:0, setupMode:false }));
-app.get('/api/config', (req, res) => res.json({ config:{ enterprise:null, enabled_providers:null, provider:{} } }));
+app.get('/api/config', (req, res) => res.json({ _tag:'OpenCodeConfigResponse', config:{ enterprise:null, enabled_providers:null, provider:{} } }));
 app.get('/api/orgs/current', (req, res) => res.json({ _tag:'OrgContextView', userId:UID, org:{ id:'org_abc123def', name:'Demo', managedProvidersOnly:false }, role:'admin' }));
 app.get('/api/orgs', (req, res) => res.json([{ _tag:'OrgView', id:'org_abc123def', name:'Demo', managedProvidersOnly:false, role:'admin' }]));
 function mkAcct(id, name) { return { _tag:'ServiceAccount', id:'svcacct_'+id, orgId:'org_abc123def', name, createdByUserId:null, createdAt:'2026-01-15T10:30:00Z', updatedAt:'2026-06-10T14:22:00Z' }; }

@@ -326,14 +326,14 @@ Every tagged struct **must** include a `_tag` field with the exact string litera
 
 ### OpenCode Config
 
-**`OpenCodeConfigResponse`**
+**`OpenCodeConfigResponse`** — returned by `GET /api/config`
 ```ts
 {
-  _tag: "OpenCodeConfigResponse",
+  _tag: "OpenCodeConfigResponse",       // REQUIRED
   config: {
-    enterprise?: { url: string } | null,
-    enabled_providers?: string[] | null,
-    provider?: Record<string, OpenCodeProvider> | null
+    enterprise: { url: string } | null,  // must be present (null if not configured)
+    enabled_providers: string[] | null,  // must be present (null if any)
+    provider: Record<string, OpenCodeProvider> | null  // must be present
   }
 }
 ```
